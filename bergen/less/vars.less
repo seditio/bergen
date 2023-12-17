@@ -1,0 +1,40 @@
+@import (css) url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400&display=swap');
+
+@mainfont:		'Source Sans 3', sans-serif;
+@maincolor:   rgba(18,20,22,.65);
+
+@black:       #000;
+@white:       #fff;
+@grey:        rgba(183,185,194,1);
+@green:				#a6bfc3;
+@lite:				#e9ecef;
+@dark:				rgb(18, 20, 22);
+
+.trans							{ transition: all .4s ease; }
+.truncate	(@lines)	{ -webkit-line-clamp: @lines; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; display: -webkit-box!important; }
+
+.flexcol-2(@tm: 0rem, @rm: 0rem) {
+	& > *		{ margin: @tm @rm 0 0; width: ~'calc((100% - @{rm}) / 2)'; }
+	& > *:nth-child(2n+2)	{ margin-right: 0; }
+	& > *:nth-child(-n+2)	{ margin-top: 0; }
+}
+
+.flexcol-3(@tm: 0rem, @rm: 0rem) {
+	& > *		{ margin: @tm @rm 0 0; width: ~'calc((100% - @{rm} * 2) / 3)'; }
+	& > *:nth-child(2n+2)	{ margin-right: @rm; }
+	& > *:nth-child(-n+2)	{ margin-top: @tm; }
+	& > *:nth-child(3n+3)	{ margin-right: 0; }
+	& > *:nth-child(-n+3)	{ margin-top: 0; }
+}
+
+.acenter  { display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.corners  { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+
+.hide     { visibility: hidden; opacity: 0; }
+.show     { visibility: visible; opacity: 1; }
+
+.ext			{ letter-spacing: 4px; text-transform: uppercase; }
+
+.last0		{
+	&:last-child { margin-bottom: 0; }
+}

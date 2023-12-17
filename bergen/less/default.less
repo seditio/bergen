@@ -1,0 +1,104 @@
+@import "vars.less";
+
+/* 0. Elements
+-------------------------------------------------- */
+
+body		{ color: @maincolor; font-family: @mainfont; font-size: 1rem; font-weight: 400; }
+
+a				{ color: @black; text-decoration: none; .trans; }
+
+header#topnav ul.navbar-nav > li > a	{ color: @black; font-size: 1.75rem; line-height: 4rem; padding: 0 .5rem; }
+
+	header#topnav a.ico					{ color: @black; line-height: 1.5rem; text-align: center; height: 1.5rem; }
+	header#topnav a.ico > i			{ font-size: 1.3125rem; line-height: 1.5rem; }
+	header#topnav a.ico > span	{ position: relative; top: 1px; }
+	header#topnav a.min > i			{ font-size: 1.125rem; width: 2rem; }
+
+	header#topnav div.logo > a	{ font-size: 1.5rem; line-height: 1.5rem; }
+
+	header#topnav div.follow-container		{ color: @grey; }
+
+	div#search									{ background: rgb(242, 244, 246); }
+		div#search div.inner			{ height: 0; overflow: hidden; visibility: hidden; opacity: 0; .trans; }
+		div#search div.inner.open	{ height: 12.5rem; visibility: visible; opacity: 1; }
+
+main.main										{ margin: 4rem 0; }
+
+footer#botnav								{ color: @white; background: @black; }
+	footer#botnav a						{ color: @white; opacity: .75; }
+	footer#botnav a:hover			{ opacity: 1; }
+	footer#botnav i						{ font-size: 1.25rem; }
+
+div.articles								{  }
+	div.articles > *					{ margin: 0 0 2rem; }
+	div.articles > article > a:first-child:after			{ content: ''; background: rgba(0,0,0,0); .corners; .trans; }
+	div.articles > article > a:first-child > span			{ color: @white; font-size: .75rem; letter-spacing: 3px; z-index: 2; .acenter; .trans; .hide; }
+	div.articles > article > a:first-child > ul.meta	{ color: @white; font-size: .75rem; letter-spacing: 1px; right: 1rem; bottom: 1rem; left: 1rem; .trans; .hide; }
+	div.articles > article > a:first-child:hover:after			{ background: rgba(0,0,0,.3); }
+	div.articles > article > a:first-child:hover > span,
+	div.articles > article > a:first-child:hover > ul.meta	{ .show; }
+
+	div.articles > article > div > a	{ font-size: 1.5rem; }
+	div.articles > article > div > p	{ line-height: 1.25rem; }
+
+ul.list-tags										{  }
+	ul.list-tags > li							{ margin-right: .5rem; }
+	ul.list-tags > li:last-child	{ margin-right: 0; }
+	ul.list-tags > li > a					{ color: @grey; font-size: .875rem; }
+	ul.list-tags > li > a:hover		{ color: @black; }
+	ul.list-tags > li > a:before	{ content: '#'; opacity: .5; }
+
+div#featured										{  }
+	div#featured > div						{  }
+
+ul.post-meta															{ font-size: .75rem; }
+	ul.post-meta > li												{ position: relative; }
+	ul.post-meta > li:before								{ content: '\b7'; margin: 0 .5rem; }
+	ul.post-meta > li:first-child:before		{ display: none; }
+	ul.post-meta > li.post-author						{ line-height: 1.25rem; }
+	ul.post-meta > li.post-author img				{ height: 1.25rem; width: 1.25rem; border-radius: 50%; }
+
+div.block									{ margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid @lite; }
+	div.block:last-child		{ margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+	div.block > span.title	{ color: @black; font-size: .875rem; .ext; }
+
+	ul.widget																		{  }
+		ul.widget > li														{ margin-bottom: 1rem; .last0; }
+		ul.widget > li > a > figure								{ width: 5rem; }
+		ul.widget > li > a > figure > figcaption	{ color: @white; font-size: .75rem; line-height: 2rem; text-align: center; width: 2rem; background: @black; .trans; }
+		ul.widget > li > a:hover > figure > figcaption	{ background: @green; }
+		ul.widget > li > div > a									{ font-size: 1.125rem; .truncate(3); }
+		ul.widget > li > div > a:hover						{ color: @green; }
+
+div.textbox			{ color: @dark; font-weight: 300; }
+
+/* 1. Titles & headings
+-------------------------------------------------- */
+
+div.title											{  }
+	div.title > ol.breadcrumb		{ font-size: .75rem; margin-bottom: 2rem; .ext; }
+	div.title > span						{ color: @grey; }
+	div.title > p								{ color: @dark; }
+
+span.title, span.subtitle			{ display: block; }
+
+h1, h2, h3, h4, h5						{ color: @black; }
+
+/* 2. Forms
+-------------------------------------------------- */
+
+form[action='contact'] label			{ color: @dark; font-size: .875rem; margin: 0 0 .25rem; display: block; }
+form[action='contact'] input,
+form[action='contact'] textarea		{ line-height: 1.5; padding: .75rem; width: 100%; background: @lite; border: none; display: block; }
+
+/* 99. Helpers & hacks
+-------------------------------------------------- */
+
+.br0		{ border-radius: 0; }
+.spaced	{ margin: 0 .5rem; }
+
+// Admin Block
+div#adminblock ul > li	{ margin-bottom: .25rem; }
+
+// CKEditor Fix
+div.cke { box-sizing: border-box; }

@@ -1,0 +1,47 @@
+@import "vars.less";
+
+@media (min-width: 768px) {
+	header#topnav div.logo > a				{ font-size: 1.75rem; }
+
+	div.articles.grid											{ .flexcol-2(1.5rem, 2rem); }
+  div.articles.grid > article > div > a	{ .truncate(2); }
+  div.articles.grid > article > div > p	{ .truncate(3); }
+
+	div.articles.list > article > a				{ width: 50%; }
+	div.articles.list > article > div			{ width: 50%; }
+
+	main.page > figure							{ height: 400px; }
+	main.page > figure > img				{ width: 100%; .acenter; }
+	main.page div.wrapper						{ margin-top: -4rem; padding: 1px; background: @white; }
+}
+
+@media (min-width: 992px) {
+	header#topnav div.logo						{ width: 100%; }
+
+	header#topnav div.logo > div,
+	header#topnav > a,
+	header#topnav > div.user-title		{ flex: 1; }
+
+	header#topnav ul.navbar-nav > li > a	{ font-size: .875rem; line-height: 1.5rem; }
+
+	div.follow-title									{ width: 10rem; }
+	div.follow-title > p							{ color: @green; font-size: .6875rem; }
+
+	div.follow-container							{ font-size: .75rem; }
+	div.follow-container a:last-child	{ padding: .25rem 1rem; }
+	div.follow-container a:hover			{ opacity: .75; }
+
+	div#search												{ padding: 0 3rem; }
+
+	div.articles.grid									{ .flexcol-3(1.5rem, 2rem); }
+
+	div#adminblock ul > li	{ margin-bottom: 0; }
+}
+
+@media (min-width: 1200px) {
+	header#topnav div.logo > a				{ font-size: 2rem; }
+
+	ul.list-tags > li > a							{ font-size: .75rem; }
+
+	main.page div.wrapper							{ margin-top: -6rem; }
+}
