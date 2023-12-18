@@ -18,7 +18,7 @@
 					<article class="d-md-flex">
 						<a href="{LIST_ROW_URL}" class="me-md-4 d-block position-relative">
 							<figure class="mb-md-0">
-								<img src="{PHP.cfg.themes_dir}/{PHP.theme}/temp/{LIST_ROW_ID}.jpg" alt="" class="img-fluid" />
+								<img src="{LIST_ROW_ID|getpic($this)}" alt="" class="img-fluid" />
 							</figure>
 							<span class="text-uppercase">{PHP.L.ReadMore}</span>
 							<ul class="mb-0 list-unstyled d-flex justify-content-center position-absolute meta">

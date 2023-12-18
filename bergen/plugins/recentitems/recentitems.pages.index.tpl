@@ -4,7 +4,7 @@
 	<article>
 		<a href="{PAGE_ROW_URL}" class="d-block position-relative">
 			<figure>
-				<img src="{PHP.cfg.themes_dir}/{PHP.theme}/temp/{PAGE_ROW_ID}.jpg" alt="" class="img-fluid" />
+				<img src="{PAGE_ROW_ID|getpic($this)}" alt="" class="img-fluid" />
 			</figure>
 			<span class="text-uppercase">{PHP.L.ReadMore}</span>
 			<ul class="mb-0 list-unstyled d-flex justify-content-center position-absolute meta">

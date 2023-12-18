@@ -9,7 +9,7 @@
 				<div class="position-relative wrapper">
 					{FILE "{PHP.cfg.themes_dir}/{PHP.cfg.defaulttheme}/warnings.tpl"}
 					<figure>
-						<img src="{PHP.cfg.themes_dir}/{PHP.theme}/temp/{PAGE_ID}.jpg" alt="{PAGE_TITLE}" class="img-fluid" />
+						<img src="{PAGE_ID|getpic($this)}" alt="{PAGE_TITLE}" class="img-fluid" />
 					</figure>
 					<div class="title mb-3">
 						{PAGE_BREADCRUMBS}
