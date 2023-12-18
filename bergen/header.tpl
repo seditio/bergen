@@ -30,22 +30,22 @@
 					<div class="logo pb-lg-3 order-lg-first d-lg-flex justify-content-between align-items-center">
 						<div class="small d-none d-lg-flex justify-content-start">
 							<a href="#" class="ico d-flex me-3">
-	              <i class="fa-brands fa-facebook me-1"></i>
+								<i class="fa-brands fa-facebook me-1"></i>
 								<span>12</span>
-	            </a>
-	            <a href="{PHP.R.Twitter}" class="ico d-flex me-3">
-	              <i class="fa-brands fa-twitter me-1"></i>
+							</a>
+							<a href="{PHP.R.Twitter}" class="ico d-flex me-3">
+								<i class="fa-brands fa-twitter me-1"></i>
 								<span>24</span>
-	            </a>
-	            <a href="#" class="ico d-flex me-3">
-	              <i class="fa-brands fa-instagram me-1"></i>
+							</a>
+							<a href="#" class="ico d-flex me-3">
+								<i class="fa-brands fa-instagram me-1"></i>
 								<span>36</span>
-	            </a>
-	            <a href="#" class="ico d-flex">
-	              <i class="fa-brands fa-pinterest me-1"></i>
+							</a>
+							<a href="#" class="ico d-flex">
+								<i class="fa-brands fa-pinterest me-1"></i>
 								<span>48</span>
-	            </a>
-	          </div>
+							</a>
+						</div>
 						<a href="{PHP.cfg.mainurl}" class="d-block">DSLR.BY</a>
 						<div class="d-none d-lg-flex justify-content-end align-items-center">
 							<div class="me-3 follow-title">
@@ -61,10 +61,10 @@
 														<g transform="translate(59.000000, 41.000000)">
 															<path d="M0.683450015,8.08897653 C25.8852284,23.1946337 47.1584704,21.3991464 64.5031761,2.70251459" stroke="#a6bfc3" transform="translate(32.593313, 10.458588) scale(-1, 1) translate(-32.593313, -10.458588) "></path> <polygon fill="#a6bfc3" transform="translate(67.531089, 6.348076) rotate(60.000000) translate(-67.531089, -6.348076) " points="63.7165064 10.7984225 67.5310889 1.89772989 71.3456715 10.7984225"></polygon>
 														</g>
+													</g>
 												</g>
 											</g>
 										</g>
-									</g>
 									</svg>
 								</div>
 							</div>
@@ -116,15 +116,59 @@
 							<i class="fa fa-user-gear"></i>
 						</a>
 						<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
-						  <div class="offcanvas-header">
-						    <span class="d-block offcanvas-title" id="offcanvasUserLabel">{PHP.L.theme-usermenu}</span>
-						    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="{PHP.L.Close}"></button>
-						  </div>
-						  <div class="offcanvas-body">
-						    <p>
-						      Здесь находится меню пользователя
-						    </p>
-						  </div>
+							<div class="offcanvas-header">
+								<span class="d-block offcanvas-title" id="offcanvasUserLabel">{PHP.L.theme-usermenu}</span>
+								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="{PHP.L.Close}"></button>
+							</div>
+							<div class="offcanvas-body">
+								<!-- IF {PHP.usr.id} == 0 -->
+								<span class="fs-5 fw-bold mb-2 d-block">{PHP.L.users_loggedinas} {PHP.L.Guest}</span>
+								<ul class="list-unstyled mb-0">
+									<li>
+										<a href="{PHP|cot_url('login')}"><span>{PHP.L.Login}</span></a>
+									</li>
+									<li>
+										<a href="{PHP|cot_url('users', 'm=register')}"><span>{PHP.L.Register}</span></a>
+									</li>
+									<li>
+										<a href="{PHP|cot_url('users', 'm=passrecover')}"><span>{PHP.L.users_lostpass}</span></a>
+									</li>
+								</ul>
+								<!-- ELSE -->
+								<span class="fs-5 fw-bold mb-2 d-block">{PHP.L.users_loggedinas} {PHP.usr.name}</span>
+								<ul class="list-unstyled">
+									<!-- IF {PHP.usr.maingrp} == 5 -->
+									<li>
+										<a href="{PHP|cot_url('admin')}"><span>{PHP.L.Adminpanel}</span></a>
+									</li>
+									<!-- ENDIF -->
+									<!-- IF {PHP|cot_module_active('pm')} -->
+									<li>
+										<a href="{PHP|cot_url('pm')}"><span class="position-relative">{PHP.L.Private_Messages}<!-- IF {PHP.usr.messages} --><i class="fst-normal ms-1 position-absolute bottom-0 badge bg-danger">{PHP.usr.messages}</i><!-- ENDIF --></span></a>
+									</li>
+									<!-- ENDIF -->
+									<li>
+										<a href="{PHP|cot_url('users')}"><span>{PHP.L.Users}</span></a>
+									</li>
+									<!-- IF {PHP|cot_plugin_active('whosonline')} -->
+									<li>
+										<a href="{PHP|cot_url('whosonline')}"><span class="position-relative">{PHP.L.WhosOnline}<i class="fst-normal ms-1 align-top badge bg-primary">{PHP.sys.whosonline_all_count}</i></span></a>
+									</li>
+									<!-- ENDIF -->
+									<!-- IF {PHP|cot_plugin_active('thanks')} -->
+									<li>
+										<a href="{PHP.usr.id|cot_url('thanks', 'a=viewdetails&user=$this')}"><span class="position-relative">Вам сказали спасибо<i class="fst-normal ms-1 align-top badge bg-primary">{PHP.usr.profile.user_thanks}</i></span></a>
+									</li>
+									<!-- ENDIF -->
+									<li>
+										<a href="{PHP|cot_url('profile')}"><span>{PHP.L.Profile}</span></a>
+									</li>
+									<li>
+										<a href="{PHP.sys.xk|cot_url('login', 'out=1&x=$this')}"><span>{PHP.L.Logout}</span></a>
+									</li>
+								</ul>
+								<!-- ENDIF -->
+							</div>
 						</div>
 					</div>
 				</header>
@@ -149,4 +193,4 @@
 			</div>
 		</div>
 	</div>
-<!-- END: HEADER -->
+	<!-- END: HEADER -->
