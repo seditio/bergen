@@ -1,6 +1,6 @@
 <div id="adminblock" class="row">
 	<div class="col">
-		<ul class="list-inline mt-3 mb-0">
+		<ul class="list-inline text-center mt-3 mb-0">
 			<li class="list-inline-item">
 				<a href="{PHP|cot_url('admin')}">{PHP.L.Adminpanel}</a>
 			</li>

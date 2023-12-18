@@ -17,9 +17,11 @@ $(document).ready(function() {
   $('input[name=rpassword1]').addClass('form-control');
   $('input[name=rpassword2]').addClass('form-control');
 
+  $('input[name=rsubject]').addClass('form-control');
   $('input[name=ruseremail]').addClass('form-control');
-
   $('input[name=rverify]').addClass('form-control');
+
+  $('textarea[name=rtext]').addClass('form-control');
 
   $('input[name=roldpass]').addClass('form-control');
   $('input[name=rnewpass1]').addClass('form-control');
