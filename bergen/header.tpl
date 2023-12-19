@@ -161,7 +161,7 @@
 									</li>
 									<!-- ENDIF -->
 									<li>
-										<a href="{PHP|cot_url('profile')}"><span>{PHP.L.Profile}</span></a>
+										<a href="{PHP|cot_url('users', 'm=profile')}"><span>{PHP.L.Profile}</span></a>
 									</li>
 									<li>
 										<a href="{PHP.sys.xk|cot_url('login', 'out=1&x=$this')}"><span>{PHP.L.Logout}</span></a>
